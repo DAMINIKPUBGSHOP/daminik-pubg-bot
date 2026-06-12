@@ -1,4 +1,4 @@
-﻿[12/06/2026 6:19 PM] KOMIL UCELL: from telegram import (
+from telegram import (
     Update,
     ReplyKeyboardMarkup,
     InlineKeyboardButton,
