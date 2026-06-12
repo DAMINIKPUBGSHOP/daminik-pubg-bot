@@ -135,7 +135,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif text == "⭐️ Prime":
         await update.message.reply_photo(
         photo="AgACAgIAAxkBAAFMO1dqK-73-hwvgp3HQoYreXb3g0zJZgACPRxrG3raYUkHD6hqoJtEBgEAAwIAA3kAAzwE",
-[12/06/2026 6:19 PM] KOMIL UCELL: caption=
+        caption=
         "⭐️ PRIME NARXLARI ⭐️\n\n"
         "1 oylik — 14 000 so'm\n"
         "3 oylik — 38 000 so'm\n"
@@ -269,7 +269,7 @@ async def check_subscription(update: Update, context: ContextTypes.DEFAULT_TYPE)
         await context.bot.send_photo(
             chat_id=query.from_user.id,
             photo="AgACAgIAAxkBAAIBv2oqUz5IRpOEwXO4eN_2UiYbVvnZAAK2F2sbvHtYScwW0ifW664yAQADAgADeQADOwQ",
-[12/06/2026 6:19 PM] KOMIL UCELL: caption=
+            caption=
             "🔥 DAMINIK PUBG SHOP 🔥\n\n"
             "⚡️ Eng tezkor UC xizmati\n"
             "💎 Ishonchli savdo\n"
@@ -430,7 +430,8 @@ def main():
     )
 
     app.run_polling()
-[12/06/2026 6:19 PM] KOMIL UCELL: async def start_order(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
+async def start_order(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data.clear()
 
     await update.message.reply_text(
@@ -576,7 +577,7 @@ async def get_receipt(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = InlineKeyboardMarkup([
         [
             InlineKeyboardButton(
-[12/06/2026 6:19 PM] KOMIL UCELL: "✅ Tasdiqlash",
+                "✅ Tasdiqlash",
                 
 callback_data=f"approve_{user.id}"
             ),
@@ -609,5 +610,5 @@ callback_data=f"approve_{user.id}"
 
     return ConversationHandler.END
     
-if name == "__main__":
+if __name__ == "__main__":
     main()
