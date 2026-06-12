@@ -1,3 +1,4 @@
+import os
 from telegram import (
     Update,
     ReplyKeyboardMarkup,
@@ -14,7 +15,7 @@ from telegram.ext import (
     filters,
 )
 
-TOKEN = "BOT_TOKEN"
+TOKEN = os.environ.get("BOT_TOKEN")
 
 ADMIN_ID = 8704037612
 CARD_NUMBER = "9860600412437037"
