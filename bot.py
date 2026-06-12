@@ -609,5 +609,5 @@ callback_data=f"approve_{user.id}"
 
     return ConversationHandler.END
     
-if name == "main":
+if name == "__main__":
     main()
