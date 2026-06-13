@@ -1,3 +1,5 @@
+from flask import Flask
+import threading
 import os
 from telegram import (
     Update,
@@ -17,6 +19,12 @@ from telegram.ext import (
 
 TOKEN = os.environ.get("BOT_TOKEN")
 
+app_web = Flask(__name__)
+
+@app_web.route("/")
+def home():
+    return "Bot ishlayapti!"
+    
 ADMIN_ID = 8704037612
 CARD_NUMBER = "9860600412437037"
 CARD_OWNER = "SABIROV URAL"
@@ -350,9 +358,14 @@ async def stats(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"📅 Bugungi buyurtmalar: {TODAY_ORDERS} ta"
     )
     
+    def run_web():
+    app_web.run(host="0.0.0.0", port=10000)
+    
 def main():
+    threading.Thread(target=run_web).start()
+    
     app = Application.builder().token(TOKEN).build()
-
+     
     conv_handler = ConversationHandler(
             allow_reentry=True,
             entry_points=[
