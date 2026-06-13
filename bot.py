@@ -429,7 +429,9 @@ def main():
         )
     )
 
-    app.run_polling()
+    app.run_polling(
+    drop_pending_updates=True
+)
 
 async def start_order(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data.clear()
